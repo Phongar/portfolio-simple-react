@@ -1,35 +1,34 @@
 import "./styles/main.css";
 import Navbar from "./Components/navbar/Navbar";
-import Header from "./Components/Header/Header";
 import Footer from "./Components/footer/Footer";
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import Contacts from "./pages/Contacts";
+import Project from "./pages/Project";
+import ScrollToTop from "./Utils/scrollToTop";
 
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
 function App() {
   return (
     <div className="App">
-    <Navbar />
-    <Header />
-     
 
-        <main className="section">
-            <div className="container">
+    <Router>
+    <ScrollToTop />
+        <Navbar />
 
-                    <ul className="content-list">
-                        <li className="content-list__item">
-                            <h2 className="title-2">Frontend</h2>
-                            <p>JavaScript, TypeScript, ReactJS, Angular, Redux, HTML, CSS, NPM, BootStrap, MaterialUI, Yarn, TailwindCSS, StyledComponents</p>
-                        </li>
-                        <li className="content-list__item">
-                            <h2 className="title-2">Backend</h2>
-                            <p>NodeJS, MySQL, MongoDB, PHP, Laravel</p>
-                        </li>
-                    </ul>
-            </div>
-        </main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/project/:id" element={<Project />} />
+          <Route path="/contacts" element={<Contacts />} />
+        </Routes>
 
-    <Footer />    
-
+        <Footer />   
+    </Router>
+    
     </div>
   );
 }

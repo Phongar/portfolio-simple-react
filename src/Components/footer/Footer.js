@@ -17,8 +17,6 @@ const Footer = () => {
                 <li className="social__item"><a href="#!"><img src={twitter} alt="Link" /></a></li>
                 <li className="social__item"><a href="#!"><img src={gitHub} alt="Link" /></a></li>
                 <li className="social__item"><a href="#!"><img src={linkedIn} alt="Link" /></a></li>
-                <h4>title</h4>
-                <p>lorem</p>
             </ul>
             <div className="copyright">
                 <p>© 2022 frontend-dev.com</p>
